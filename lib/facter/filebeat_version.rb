@@ -30,6 +30,6 @@ Facter.add('filebeat_version') do
     end
   end
   setcode do
-    filebeat_version.nil? ? false : %r{^filebeat version ([^\s]+)?}.match(filebeat_version)[1]
+    filebeat_version.nil? ? "0.0.0" : %r{^filebeat version ([^\s]+)?}.match(filebeat_version)[1]
   end
 end
